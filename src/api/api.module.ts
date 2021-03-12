@@ -8,6 +8,7 @@ import { AuthController } from './auth.controller';
 import { PermissionController } from './permission.controller';
 import { ModuleController } from './module.controller';
 import { RoleController } from './role.controller';
+import { MaterialController } from './material.controller'
 
 @Module({
   controllers: [
@@ -16,6 +17,7 @@ import { RoleController } from './role.controller';
     PermissionController,
     ModuleController,
     RoleController,
+    MaterialController,
   ],
 })
 export class ApiModule {

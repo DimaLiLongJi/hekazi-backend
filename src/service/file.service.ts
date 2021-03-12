@@ -33,7 +33,8 @@ export class FileService {
       size: number,
     },
   ): string {
-    const fileName = `${file.originalname}-${Date.now()}`;
+    console.log(222222, file);
+    const fileName = `${Date.now()}-${file.originalname}`;
     const writeStream = createWriteStream(join(__dirname, '../..', 'static', fileName));
     try {
       writeStream.write(file.buffer, () => {

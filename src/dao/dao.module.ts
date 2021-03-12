@@ -6,12 +6,14 @@ import { PermissionEntity } from './permission/permission.entity';
 import { ModuleEntity } from './module/module.entity';
 import { RoleEntity } from './role/role.entity';
 import { FileEntity } from './file/file.entity';
+import { MaterialEntity } from './material/material.entity';
 
 import { UserDAO } from './user/user.dao';
 import { ModuleDAO } from './module/module.dao';
 import { PermissionDAO } from './permission/permission.dao';
 import { RoleDAO } from './role/role.dao';
 import { FileDAO } from './file/file.dao';
+import { MaterialDAO } from './material/material.dao';
 
 import { EnvService } from '../service/env.service';
 
@@ -24,6 +26,7 @@ const DOAList = [
   ModuleDAO,
   RoleDAO,
   FileDAO,
+  MaterialDAO,
 ];
 
 @Global()
@@ -46,6 +49,7 @@ const DOAList = [
       ModuleEntity,
       RoleEntity,
       FileEntity,
+      MaterialEntity,
     ]),
   ],
   providers: [

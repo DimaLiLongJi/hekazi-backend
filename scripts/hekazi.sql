@@ -57,6 +57,7 @@ BEGIN;
 INSERT INTO `module` VALUES (1, '权限管理', 'cluster', '2020-05-27 09:43:56.438644', '2020-05-27 09:43:56.438644', NULL, 1);
 INSERT INTO `module` VALUES (2, '个人中心', 'user', '2020-05-27 09:46:07.591745', '2020-05-27 09:46:07.591745', NULL, 1);
 INSERT INTO `module` VALUES (3, '需求管理', 'project', '2020-05-27 09:46:44.982163', '2020-05-27 09:46:44.982163', NULL, 1);
+INSERT INTO `module` VALUES (4, '扫码中心', 'barcode', '2020-05-27 09:46:44.982163', '2020-05-27 09:46:44.982163', NULL, 1);
 COMMIT;
 
 -- ----------------------------
@@ -92,18 +93,12 @@ INSERT INTO `permission` VALUES (1, '权限列表', '/home/permission-list', NUL
 INSERT INTO `permission` VALUES (2, '角色列表', '/home/role-list', NULL, '2019-10-11 09:43:03.390693', '2019-10-15 10:26:14.000000', 1, '1', 1, NULL);
 INSERT INTO `permission` VALUES (3, '用户列表', '/home/user-list', NULL, '2019-10-11 10:08:03.849477', '2020-05-27 10:28:04.000000', 1, '1', 1, NULL);
 INSERT INTO `permission` VALUES (4, '个人信息', '/home/self', NULL, '2019-10-15 14:26:54.657869', '2020-05-27 09:54:50.000000', 1, '1', 2, NULL);
-INSERT INTO `permission` VALUES (5, '需求类型列表', '/home/type-list', NULL, '2019-10-16 13:16:28.247285', '2020-05-27 10:28:10.000000', 1, '1', 3, NULL);
-INSERT INTO `permission` VALUES (6, '需求状态列表', '/home/status-list', NULL, '2019-10-16 17:32:57.459197', '2020-05-27 10:25:28.000000', 1, '1', 3, NULL);
-INSERT INTO `permission` VALUES (7, '需求列表', '/home/list', NULL, '2019-10-18 17:23:31.010902', '2020-05-27 10:27:52.000000', 1, '1', 3, NULL);
-INSERT INTO `permission` VALUES (8, '修改个人角色和权限', NULL, 'change-self-role', '2019-10-20 22:13:00.850461', '2020-05-27 10:27:48.000000', 1, '2', 2, NULL);
-INSERT INTO `permission` VALUES (9, '修改需求状态', NULL, 'update-status', '2019-10-22 08:58:56.795643', '2020-05-27 10:27:45.000000', 1, '2', 3, NULL);
-INSERT INTO `permission` VALUES (10, '新增需求', NULL, 'create-demand', '2019-10-22 09:12:00.018899', '2020-05-27 10:27:31.000000', 1, '2', 3, NULL);
-INSERT INTO `permission` VALUES (11, '修改需求详情', NULL, 'update-demand', '2019-10-22 10:35:52.673418', '2020-05-27 10:27:35.000000', 1, '2', 3, NULL);
-INSERT INTO `permission` VALUES (12, '我的需求', '/home/self-list', NULL, '2019-10-22 11:46:10.457779', '2020-05-27 10:27:18.000000', 1, '1', 2, NULL);
-INSERT INTO `permission` VALUES (13, '需求看板', '/home/kanban', NULL, '2020-03-28 14:52:26.599895', '2020-05-27 10:27:14.000000', 1, '1', 3, NULL);
-INSERT INTO `permission` VALUES (14, '创建用户', NULL, 'create-user', '2020-05-30 11:43:27.538248', '2020-05-30 11:43:27.538248', 1, '2', 1, NULL);
-INSERT INTO `permission` VALUES (15, '编辑用户', NULL, 'update-user', '2020-05-30 11:44:18.417886', '2020-05-30 11:44:18.417886', 1, '2', 1, NULL);
-INSERT INTO `permission` VALUES (16, '重置用户密码', NULL, 'reset-user-password', '2020-06-29 14:13:28.637000', '2020-06-29 14:13:28.637000', 1, '2', 1, NULL);
+INSERT INTO `permission` VALUES (5, '修改个人角色和权限', NULL, 'change-self-role', '2019-10-20 22:13:00.850461', '2020-05-27 10:27:48.000000', 1, '2', 2, NULL);
+INSERT INTO `permission` VALUES (6, '创建用户', NULL, 'create-user', '2020-05-30 11:43:27.538248', '2020-05-30 11:43:27.538248', 1, '2', 1, NULL);
+INSERT INTO `permission` VALUES (7, '编辑用户', NULL, 'update-user', '2020-05-30 11:44:18.417886', '2020-05-30 11:44:18.417886', 1, '2', 1, NULL);
+INSERT INTO `permission` VALUES (8, '重置用户密码', NULL, 'reset-user-password', '2020-06-29 14:13:28.637000', '2020-06-29 14:13:28.637000', 1, '2', 1, NULL);
+INSERT INTO `permission` VALUES (9, '素材列表', '/home/material', NULL, '2020-06-29 14:13:28.637000', '2020-06-29 14:13:28.637000', 1, '1', 4, NULL);
+
 COMMIT;
 
 -- ----------------------------
@@ -197,12 +192,5 @@ INSERT INTO `user_permission` VALUES (1, 6);
 INSERT INTO `user_permission` VALUES (1, 7);
 INSERT INTO `user_permission` VALUES (1, 8);
 INSERT INTO `user_permission` VALUES (1, 9);
-INSERT INTO `user_permission` VALUES (1, 10);
-INSERT INTO `user_permission` VALUES (1, 11);
-INSERT INTO `user_permission` VALUES (1, 12);
-INSERT INTO `user_permission` VALUES (1, 13);
-INSERT INTO `user_permission` VALUES (1, 14);
-INSERT INTO `user_permission` VALUES (1, 15);
-INSERT INTO `user_permission` VALUES (1, 16);
 COMMIT;
 
