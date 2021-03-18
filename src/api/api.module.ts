@@ -9,6 +9,7 @@ import { PermissionController } from './permission.controller';
 import { ModuleController } from './module.controller';
 import { RoleController } from './role.controller';
 import { MaterialController } from './material.controller'
+import { QrcodeController } from './qrcode.controller';
 
 @Module({
   controllers: [
@@ -18,6 +19,7 @@ import { MaterialController } from './material.controller'
     ModuleController,
     RoleController,
     MaterialController,
+    QrcodeController
   ],
 })
 export class ApiModule {

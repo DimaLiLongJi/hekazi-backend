@@ -9,6 +9,7 @@ import { RoleService } from './role.service';
 import { ExcelService } from './excel.service';
 import { FileService } from './file.service';
 import { MaterialService } from './material.service';
+import { QrcodeService } from './qrcode.service';
 
 
 const serviceList = [
@@ -21,6 +22,7 @@ const serviceList = [
   ExcelService,
   FileService,
   MaterialService,
+  QrcodeService,
 ];
 
 const envService = new EnvService();

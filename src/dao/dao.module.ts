@@ -14,8 +14,12 @@ import { PermissionDAO } from './permission/permission.dao';
 import { RoleDAO } from './role/role.dao';
 import { FileDAO } from './file/file.dao';
 import { MaterialDAO } from './material/material.dao';
+import { QrcodeDAO } from './qrcode/qrcode.dao';
+import { QrcodeMaterialDAO } from './qrcode-material/qrcode-material.dao';
 
 import { EnvService } from '../service/env.service';
+import { QrcodeEntity } from './qrcode/qrcode.entity';
+import { QrcodeMaterialEntity } from './qrcode-material/qrcode-material.entity';
 
 const envService = new EnvService();
 const config = envService.getConfig();
@@ -27,6 +31,8 @@ const DOAList = [
   RoleDAO,
   FileDAO,
   MaterialDAO,
+  QrcodeDAO,
+  QrcodeMaterialDAO,
 ];
 
 @Global()
@@ -50,6 +56,8 @@ const DOAList = [
       RoleEntity,
       FileEntity,
       MaterialEntity,
+      QrcodeEntity,
+      QrcodeMaterialEntity,
     ]),
   ],
   providers: [
