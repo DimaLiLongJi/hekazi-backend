@@ -4,6 +4,7 @@ import { Request } from 'express';
 import { QrcodeService } from 'src/service/qrcode.service';
 import { Qrcode } from 'src/types/qrcode';
 import { QrcodeEntity } from 'src/dao/qrcode/qrcode.entity';
+import { MaterialEntity } from 'src/dao/material/material.entity';
 
 @Controller('/api/qrcode')
 export class QrcodeController {
@@ -22,6 +23,25 @@ export class QrcodeController {
       return {
         success: true,
         message: '创建二维码页面成功',
+        data: info,
+      };
+    } catch (e) {
+      return {
+        success: false,
+        message: e,
+      };
+    }
+  }
+
+  @Get('/random/:id')
+  public async findRandomById(
+    @Param('id') id: number,
+  ): Promise<IResponse<MaterialEntity>> {
+    try {
+      const info = await this.service.findRandomById(id);
+      return {
+        success: true,
+        message: `获取id为${id}的二维码页面成功`,
         data: info,
       };
     } catch (e) {

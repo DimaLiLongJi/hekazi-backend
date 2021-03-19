@@ -5,8 +5,8 @@
   "database": {
     "host": "localhost",
     "port": 3306,
-    "username": "heakzidbuser",
-    "password": "yP@6M5s^#U",
+    "username": "root",
+    "password": "ZYzx#2020",
     "database": "hekazi"
   },
   "email": {
@@ -20,5 +20,5 @@
     "debug": true,
     "logger": true
   },
-  "contentUrl": "http://localhost:9080/hlj/global/manager/pages/home/self-list?demandId="
+  "contentUrl": "http://localhost:9080/manager/pages/home/self-list?demandId="
 }

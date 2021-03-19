@@ -12,6 +12,7 @@
     "start:dev": "NODE_ENV=dev nest start --watch",
     "start:debug": "NODE_ENV=dev nest start --debug --watch",
     "start:prod": "NODE_ENV=prod nodemon dist/main",
+    "start:linux":"pm2 start ./main --env prod",
     "start:win": "nest start",
     "start:windev": "nest start --watch",
     "start:windebug": "nest start --debug --watch",

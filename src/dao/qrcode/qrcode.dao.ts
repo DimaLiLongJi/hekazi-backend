@@ -16,7 +16,7 @@ export class QrcodeDAO {
 
   public async findAll(): Promise<QrcodeEntity[]> {
     return this.repository.find({
-      relations: ['creator', 'qrcodeMaterialList', 'qrcodeMaterialList.material'],
+      relations: ['creator', 'qrcodeMaterialList', 'qrcodeMaterialList.material', 'qrcodeMaterialList.material.file'],
       order: {
         id: 'ASC',
       },
@@ -24,11 +24,11 @@ export class QrcodeDAO {
   }
 
   public async findOne(where: any): Promise<QrcodeEntity> {
-    return this.repository.findOne({ where, relations: ['creator', 'qrcodeMaterialList', 'qrcodeMaterialList.material'] });
+    return this.repository.findOne({ where, relations: ['creator', 'qrcodeMaterialList', 'qrcodeMaterialList.material', 'qrcodeMaterialList.material.file'] });
   }
 
   public async findById(id: number): Promise<QrcodeEntity> {
-    return this.repository.findOne(id, {relations: ['creator', 'qrcodeMaterialList', 'qrcodeMaterialList.material']});
+    return this.repository.findOne(id, {relations: ['creator', 'qrcodeMaterialList', 'qrcodeMaterialList.material', 'qrcodeMaterialList.material.file']});
   }
 
   public async update(id: number, params: any = {}): Promise<UpdateResult> {
@@ -48,7 +48,7 @@ export class QrcodeDAO {
       skip,
       take: params.pageSize,
       where,
-      relations: ['creator', 'qrcodeMaterialList', 'qrcodeMaterialList.material'],
+      relations: ['creator', 'qrcodeMaterialList', 'qrcodeMaterialList.material', 'qrcodeMaterialList.material.file'],
       order: {
         id: 'ASC',
       },

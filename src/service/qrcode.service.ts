@@ -8,6 +8,7 @@ import { QrcodeDAO } from 'src/dao/qrcode/qrcode.dao';
 import { Qrcode } from 'src/types/qrcode';
 import { QrcodeEntity } from 'src/dao/qrcode/qrcode.entity';
 import { QrcodeMaterialDAO } from 'src/dao/qrcode-material/qrcode-material.dao';
+import { QrcodeMaterialEntity } from 'src/dao/qrcode-material/qrcode-material.entity';
 
 @Injectable()
 export class QrcodeService {
@@ -53,6 +54,45 @@ export class QrcodeService {
     return this.dao.findById(id);
   }
 
+  public async findRandomById(id: number) {
+    const qrcode = await this.dao.findById(id);
+    if (!qrcode || !qrcode.qrcodeMaterialList || qrcode.qrcodeMaterialList.length <=0) {
+      return null;
+    }
+    const materialList = qrcode.qrcodeMaterialList;
+    const qrcodeMaterial = this.selectQrcode(materialList);
+    return qrcodeMaterial.material;
+  }
+
+  private sumWeight(list: QrcodeMaterialEntity[]): number {
+    let sum = 0;
+    list.forEach(function(li) {
+      sum += li.probability;
+    });
+    return sum;
+  }
+  
+  private selectQrcode(list: QrcodeMaterialEntity[]): QrcodeMaterialEntity {
+    var weightSum = this.sumWeight(list);
+    var radom = Math.random()*weightSum;
+    const prizeList = list.map(li => {
+      return {...li, from: null, to: null};
+    });
+    let last = 0;
+    prizeList.forEach(function (pri) {
+      pri.from = last;
+      last += pri.probability;
+      pri.to = last;
+    });
+
+    let prize = null;
+    prizeList.forEach(function (pri) {
+      if (radom >= pri.from && radom <= pri.to) prize = pri;
+    });
+    console.log(888888, radom, prizeList);
+    console.log(2222223, prize);
+    return prize;
+  }
 
   public async update(id: number, params?: Qrcode) {
     const qrcode = await this.dao.findById(id);
