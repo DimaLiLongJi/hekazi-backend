@@ -35,7 +35,7 @@ export class FileService {
   ): string {
     console.log(222222, file);
     const fileName = `${Date.now()}-${file.originalname}`;
-    const writeStream = createWriteStream(join(__dirname, '../..', 'static', fileName));
+    const writeStream = createWriteStream(join(__dirname, '../../..', 'static', fileName));
     try {
       writeStream.write(file.buffer, () => {
         console.log(`${fileName} 文件传输完毕`);

@@ -32,12 +32,6 @@ CREATE TABLE `file` (
   CONSTRAINT `FK_301b44a4226ae80beb0416d8831` FOREIGN KEY (`creatorId`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- ----------------------------
--- Records of file
--- ----------------------------
-BEGIN;
-INSERT INTO `file` VALUES (2, '1615520517819-1.png', '2021-03-12 11:41:57.830615', 1);
-COMMIT;
 
 -- ----------------------------
 -- Table structure for material
@@ -253,4 +247,4 @@ INSERT INTO `user_permission` VALUES (1, 9);
 INSERT INTO `user_permission` VALUES (1, 10);
 COMMIT;
 
-SET FOREIGN_KEY_CHECKS = 1;
+SET FOREIGN_KEY_CHECKS=0;

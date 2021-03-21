@@ -15,7 +15,7 @@ async function main() {
   app.setGlobalPrefix('/manager');
   app.use(cookieParser());
   // 静态资源
-  app.useStaticAssets(join(__dirname, '../static'), {
+  app.useStaticAssets(join(__dirname, '../../static'), {
     prefix: '/manager/static/',
   });
   // 视图模板引擎
