@@ -1,3 +1,4 @@
 /node_modules
 /dist
 src/dao/.DS_Store
+/static/*
